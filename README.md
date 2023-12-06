@@ -7,4 +7,6 @@ Another section ("Figures") has code used to make the vairous figures from the m
 
 In each section there will be near-identical copies of the scripts that were used for each of the different comparions that were made in the manuscript. These include MCI:CU, AD:MCI, AD:CU, CU:MCI:AD. I'm sure there was a nice, clean way to combine all of the different iterations of the scripts into one concise, cohesive one, but available time and energy led me down this path instead. 
 
+Questions, concerns, comments can be directed to madrid2@wisc.edu.
+
 -A.M.
