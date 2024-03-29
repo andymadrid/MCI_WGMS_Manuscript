@@ -506,6 +506,14 @@ load_data_with_pi_diff <- function(ifile){
 }
 df <- do.call("rbind", lapply(all.files, load_data_with_pi_diff)) 
 
+# remove non-CpG sites
+load("/media/Data/WGBS/LOAD_MCI/Results/coordinates.notCpGs.rdata")
+df.notCpGs.gr <- with(df.notCpGs, GRanges(chr, IRanges(start, start)))
+df.gr <- with(df, GRanges(chr, IRanges(pos, pos)))
+x <- as.data.frame(findOverlaps(df.gr, df.notCpGs.gr))
+cpgs <- setdiff(rownames(df), x[, 1])
+df <- df[cpgs, ]
+
 # Genomic inflation (test stats from DSS are N(0,1))
 # https://github.com/haowulab/DSS/blob/55cb1a05738a2ed02717af50b7b52828bc6b508d/R/DML.multiFactor.R#L192
 chisq <- df$stat^2
