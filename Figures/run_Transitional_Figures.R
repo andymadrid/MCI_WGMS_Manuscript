@@ -21,7 +21,7 @@ source_url("https://raw.githubusercontent.com/andymadrid/WGMS_New_Figures_Code/m
 
 # set up some cutoffs
 ALPHA <- 0.05
-DMGENE.ALPHA <- 0.01
+DMGENE.ALPHA <- 0.025
 
 # get nature genes (GWAS)
 natgen.symbols <- get_natgen_genes("/media/Data/WGBS/LOAD_MCI/Results/adRiskGenes.txt",exclude_APP = T,exclude_IGH = T)
