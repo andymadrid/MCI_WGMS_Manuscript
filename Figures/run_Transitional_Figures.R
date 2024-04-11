@@ -17,7 +17,7 @@ library(GenomicRanges)
 })
 
 # read in functions
-source_url("https://raw.githubusercontent.com/andymadrid/WGMS_New_Figures_Code/main/functions_all_transitional.R")
+source_url("https://raw.githubusercontent.com/andymadrid/MCI_WGMS_Manuscript/main/Figures/functions_figures_transitional.R")
 
 # set up some cutoffs
 ALPHA <- 0.05
