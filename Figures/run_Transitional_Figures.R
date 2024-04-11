@@ -1,4 +1,4 @@
-C.E.B. WGMS Figures (CTRL v MCI v LOAD)
+#C.E.B. WGMS Figures (CTRL v MCI v LOAD)
 
 # load packages
 suppressPackageStartupMessages({
