@@ -1778,8 +1778,9 @@ my_write_csv <- function(data, file){
 get_pvals_data <- function(ifile){
   # READ pvals from
   data.table::fread(ifile, verbose = F) %>%
-    dplyr::mutate(lfdr = lfdr.from.ss,
-                  pval = p.from.ss,
+#    dplyr::mutate(lfdr = lfdr.from.ss,
+     dplyr::mutate(lfdr = fdr_cuzick,
+                 pval = p.from.ss,
                   pval.Wald = p.from.DSS,
                   y = -log10(lfdr)) %>%
     dplyr::select(-c(p.from.ss, p.from.zz, p.from.DSS,
