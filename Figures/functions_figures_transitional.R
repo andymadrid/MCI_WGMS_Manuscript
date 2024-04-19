@@ -195,7 +195,8 @@ compute_empirical_p <- function(xx, test.value){
 
 subset_dmps <- function(data, lfdr.cut=0.05){
   data %>%
-    dplyr::filter(lfdr <= lfdr.cut) %>%
+#    dplyr::filter(lfdr <= lfdr.cut) %>%
+    dplyr::filter(lfdr <= lfdr.cut & fdr_cuzick <= lfdr.cut) %>%
     dplyr::filter ((pi.diff.mci.ctrl > 0.025 & pi.diff.load.mci > 0.025) | (pi.diff.mci.ctrl < -0.025 & pi.diff.load.mci < -0.025))
 }
 
@@ -1778,10 +1779,11 @@ my_write_csv <- function(data, file){
 get_pvals_data <- function(ifile){
   # READ pvals from
   data.table::fread(ifile, verbose = F) %>%
-#    dplyr::mutate(lfdr = lfdr.from.ss,
-     dplyr::mutate(lfdr = fdr_cuzick,
+    dplyr::mutate(lfdr = lfdr.from.ss,
+#     dplyr::mutate(lfdr = fdr_cuzick,
                  pval = p.from.ss,
-                  pval.Wald = p.from.DSS,
+                 pval.Wald = p.from.DSS,
+		 fdr_cuzick = fdr_cuzick,
                   y = -log10(lfdr)) %>%
     dplyr::select(-c(p.from.ss, p.from.zz, p.from.DSS,
                      lfdr.from.ss, lfdr.from.zz))
