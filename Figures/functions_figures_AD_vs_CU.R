@@ -248,11 +248,11 @@ get_hyper_hypo_colors <- function(rgb = F){
 
 get_ensdb <- function(){
   # Make it super standard
-  gtffile <- "/media/Data/WGBS/Human_Genome/Homo_sapiens.GRCh38.111.gtf"
-  db <- ensDbFromGtf(gtf=gtffile)
-  edb <- EnsDb(db)
-  return(edb)
-#  return(EnsDb.Hsapiens.v86)
+#  gtffile <- "/media/Data/WGBS/Human_Genome/Homo_sapiens.GRCh38.111.gtf"
+#  db <- ensDbFromGtf(gtf=gtffile)
+#  edb <- EnsDb(db)
+#  return(edb)
+  return(EnsDb.Hsapiens.v86)
 }
 
 get_autosomoal_gene_universe <- function(protein_coding=F){
