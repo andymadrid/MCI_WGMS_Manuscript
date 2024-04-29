@@ -248,7 +248,7 @@ get_hyper_hypo_colors <- function(rgb = F){
 
 get_ensdb <- function(){
   # Make it super standard
-  gtffile <- "/media/Data/WGBS/Human_Genome/hg38.fa/Homo_sapiens.GRCh38.111.gtf"
+  gtffile <- "/media/Data/WGBS/Human_Genome/Homo_sapiens.GRCh38.111.gtf"
   db <- ensDbFromGtf(gtf=gtffile)
   edb <- EnsDb(db)
   return(edb)
