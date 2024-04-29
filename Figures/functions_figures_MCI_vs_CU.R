@@ -292,6 +292,10 @@ get_ensdb <- function(){
 get_autosomoal_gene_universe <- function(protein_coding=F){
   # if protein_coding = T, return only protein_coding genes
 
+#  gtffile <- "/media/Data/WGBS/Human_Genome/hg38.fa/Homo_sapiens.GRCh38.111.gtf"
+#  db <- ensDbFromGtf(gtf=gtffile)
+#  edb <- EnsDb(db)
+
   edb <- get_ensdb()
 
   all.genes <- genes(edb)
