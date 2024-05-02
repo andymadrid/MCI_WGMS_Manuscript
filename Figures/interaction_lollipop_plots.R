@@ -22,10 +22,10 @@ library(dplyr)
 })
 
 # get annotations of genes and CpG islands (just do this locally once instead of every time you source this code)
-#hg38 <- annotatr::build_annotations(genome = 'hg38', annotations = 'hg38_basicgenes')
-#hg38.cpgs <- annotatr::build_annotations(genome = 'hg38', annotations = 'hg38_cpgs')
-#cds <- hg38[grep("exon",hg38$id)]
-#cgis <- hg38.cpgs[grep("island",hg38.cpgs$id)]
+hg38 <- annotatr::build_annotations(genome = 'hg38', annotations = 'hg38_basicgenes')
+hg38.cpgs <- annotatr::build_annotations(genome = 'hg38', annotations = 'hg38_cpgs')
+cds <- hg38[grep("exon",hg38$id)]
+cgis <- hg38.cpgs[grep("island",hg38.cpgs$id)]
 
 plotLollipops <- function(gene, transcript, pdfFile, cutoff, interactionFile) {
 
@@ -356,12 +356,14 @@ dev.off()
 
 }
 
-#pvals.mci.cu <-fread("~/Desktop/MCI Figures/MCI CONTROL/pvals.bed", header=T)
-#pvals.load.cu <- fread("~/Desktop/MCI Figures/LOAD CONTROL/pvals.bed", header=T)
-#pvals.load.mci <- fread("~/Desktop/MCI Figures/LOAD MCI/pvals.bed", header=T)
+pvals.mci.cu <-fread("~/Desktop/MCI Figures/MCI CONTROL/Functional Figures/pvals.bed", header=T)
+pvals.load.cu <- fread("~/Desktop/MCI Figures/LOAD CONTROL/Functional_Figures/pvals.bed",header=T)
+pvals.load.mci <- fread("~/Desktop/MCI Figures/LOAD MCI/Functional_Figures/pvals.bed",header=T)
 
 # Lollipop plots of AD-associated genes
 #plotLollipops("SPINK4", "ENST00000379721.4", "~/Desktop/enhancerInt.SPINK4.pdf", 0.025, "~/Desktop/spink4_coords.txt")
 #plotLollipops("B4GALT1", "ENST00000379731.5", "~/Desktop/dmps-lollyplot-B4GALT1.pdf", 0.025)
 #plotLollipops("SND1", "ENST00000354725.8", "~/Desktop/enhancerInt.SND1.pdf", 0.025, "~/Desktop/snd1_coords.txt")
 #plotLollipops("SNORA70", "ENST00000354725.8", "~/Desktop/enhancerInt.SNORA70.pdf", 0.025, "~/Desktop/snora70_coords.txt")
+plotLollipops("TXNIP", "ENST00000582401.6", "~/Desktop/enhancerInt.TXNIP.pdf", 0.025, "~/Desktop/txnip_coords.txt")
+
